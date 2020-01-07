@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { hot } from 'react-hot-loader';
-import TodoApp from './components/TodoApp/';
+
+import LoadingPage from './components/LoadingPage/';
+
+const TodoApp = lazy(() => {
+  return new Promise(resolve => {
+    setTimeout(() => resolve(import('./components/TodoApp/')), 3000);
+  });
+});
+
+const Loading = <LoadingPage />;
 
 const App = () => (
   <div>
-    <TodoApp />
+    <Suspense fallback={Loading}>
+      <TodoApp />
+    </Suspense>
   </div>
 );
 

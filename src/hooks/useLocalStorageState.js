@@ -6,7 +6,7 @@ const useLocalStorageReducer = (key, defaulVal) => {
 
     try {
       val = JSON.parse(window.localStorage.getItem(key) || String(defaulVal));
-    } catch (e) {
+    } catch {
       val = defaulVal;
     }
 

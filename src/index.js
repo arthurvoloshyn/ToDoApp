@@ -1,9 +1,15 @@
 import React, { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
+
 import '@babel/polyfill';
-import App from './App';
+
+import * as serviceWorker from './serviceWorker';
+
 import DefaultErrorBoundary from './components/DefaultErrorBoundary/';
-import './styles.css';
+
+import App from './App';
+
+import './assets/css/styles.css';
 
 if (process.env.NODE_ENV === 'development') {
   const axe = require('react-axe');
@@ -18,3 +24,5 @@ ReactDOM.render(
   </StrictMode>,
   document.getElementById('app')
 );
+
+serviceWorker.register();

@@ -14,10 +14,6 @@ export default class DefaultErrorBoundary extends Component {
     children: propTypes.node.isRequired
   };
 
-  static defaultProps = {
-    children: null
-  };
-
   render() {
     const { isError } = this.state;
     const { children } = this.props;

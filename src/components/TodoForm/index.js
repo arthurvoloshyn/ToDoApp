@@ -1,8 +1,14 @@
 import React, { useContext } from 'react';
+
 import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
-import useInputState from '../../hooks/useInputState';
-import { Dispatchcontext } from '../../context/todos.context';
+
+import { ADD } from '~/constants';
+
+import useInputState from '~/hooks/useInputState';
+
+import { Dispatchcontext } from '~/context/todos.context';
+
 import { PaperStyles } from './styles';
 
 const TodoForm = () => {
@@ -14,17 +20,11 @@ const TodoForm = () => {
       <form
         onSubmit={event => {
           event.preventDefault();
-          dispatch({ type: 'ADD', task: value });
+          dispatch({ type: ADD, task: value });
           reset();
         }}
       >
-        <TextField
-          value={value}
-          onChange={handleChange}
-          margin="normal"
-          label="Add new Todo"
-          fullWidth
-        />
+        <TextField value={value} onChange={handleChange} margin="normal" label="Add new Todo" fullWidth />
       </form>
     </Paper>
   );
