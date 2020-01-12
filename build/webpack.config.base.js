@@ -118,7 +118,7 @@ module.exports = {
   plugins: [
     new WorkboxPlugin.GenerateSW(),
     new webpack.EnvironmentPlugin({
-      PUBLIC_URL: ''
+      PUBLIC_URL: PATHS.publicPath
     }),
     new MiniCssExtractPlugin({
       filename: `${PATHS.assets}css/[name].[hash].css`
