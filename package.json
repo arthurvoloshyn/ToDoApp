@@ -7,7 +7,7 @@
     "build": "webpack --config ./build/webpack.config.prod.js",
     "dev": "webpack-dev-server --open --config ./build/webpack.config.dev.js",
     "dev:hot": "npm run dev -- --hot",
-    "test": "jest",
+    "test": "jest --watchAll",
     "lint": "eslint --ext .js --ext .jsx --fix ./",
     "predeploy": "npm run build",
     "lint:styles": "stylelint --fix --syntax=css src/**/*.css",
