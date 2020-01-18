@@ -34,7 +34,7 @@ const EditTodoForm = ({ id, task, toggleEditForm }) => {
 };
 
 EditTodoForm.propTypes = {
-  id: propTypes.string,
+  id: propTypes.oneOfType([propTypes.number, propTypes.string]),
   task: propTypes.string,
   toggleEditForm: propTypes.func
 };

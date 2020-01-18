@@ -49,7 +49,7 @@ const Todo = ({ task, completed, id }) => {
 };
 
 Todo.propTypes = {
-  id: propTypes.string,
+  id: propTypes.oneOfType([propTypes.number, propTypes.string]),
   task: propTypes.string,
   completed: propTypes.bool
 };
