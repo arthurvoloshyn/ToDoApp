@@ -1,5 +1,5 @@
 {
-  "name": "ReactToDoApp",
+  "name": "ToDoApp",
   "version": "1.0.0",
   "description": "Moder tools React and JS Webpack",
   "main": "index.js",
@@ -102,6 +102,7 @@
     "webpack-bundle-analyzer": "^3.3.2",
     "webpack-cli": "^3.3.2",
     "webpack-dev-server": "^3.4.1",
+    "webpack-manifest-plugin": "^2.2.0",
     "webpack-merge": "^4.2.1",
     "workbox-webpack-plugin": "^4.3.1"
   },
@@ -114,12 +115,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ArturW1998/ReactToDoApp.git"
+    "url": "git+https://github.com/ArturW1998/ToDoApp.git"
   },
   "bugs": {
-    "url": "https://github.com/ArturW1998/ReactToDoApp/issues"
+    "url": "https://github.com/ArturW1998/ToDoApp/issues"
   },
-  "homepage": "https://github.com/ArturW1998/ReactToDoApp",
+  "homepage": "https://github.com/ArturW1998/ToDoApp",
   "eslintConfig": {
     "extends": "react-app"
   }

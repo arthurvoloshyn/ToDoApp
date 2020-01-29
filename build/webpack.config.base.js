@@ -4,7 +4,6 @@ const fs = require('fs');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const WorkboxPlugin = require('workbox-webpack-plugin');
 
 const PATHS = {
   src: path.join(__dirname, '../src'),
@@ -16,9 +15,12 @@ const PATHS = {
 const PAGES_DIR = `${PATHS.src}/html`;
 const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.html'));
 
+const publicUrl = PATHS.publicPath.slice(0, -1);
+
 module.exports = {
   externals: {
-    paths: PATHS
+    paths: PATHS,
+    publicUrl: publicUrl
   },
   entry: {
     index: PATHS.src
@@ -116,9 +118,8 @@ module.exports = {
     }
   },
   plugins: [
-    new WorkboxPlugin.GenerateSW(),
     new webpack.EnvironmentPlugin({
-      PUBLIC_URL: PATHS.publicPath
+      PUBLIC_URL: publicUrl
     }),
     new MiniCssExtractPlugin({
       filename: `${PATHS.assets}css/[name].[hash].css`
@@ -142,8 +143,8 @@ module.exports = {
         new HtmlWebpackPlugin({
           hash: false,
           template: `${PAGES_DIR}/${page}`,
-          filename: `./${page}`,
-          title: `ReactToDoApp - ${page.replace(/\.html/, '')}`,
+          filename: `${page}`,
+          title: `ToDo App - ${page.replace(/\.html/, '')}`,
           inject: true
         })
     )
