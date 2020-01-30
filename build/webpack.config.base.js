@@ -20,7 +20,7 @@ const publicUrl = PATHS.publicPath.slice(0, -1);
 module.exports = {
   externals: {
     paths: PATHS,
-    publicUrl: publicUrl
+    publicUrl
   },
   entry: {
     index: PATHS.src
