@@ -10,9 +10,9 @@
     "test": "jest --watchAll",
     "lint": "eslint --ext .js --ext .jsx --fix ./",
     "predeploy": "npm run build",
-    "lint:styles": "stylelint --fix --syntax=css src/**/*.css",
+    "lint:styles": "stylelint --fix --syntax css src/**/*.css",
     "format": "prettier \"src/**/*.{js,jsx,yml,yaml,ts,tsx,md,graphql,mdx}\" --write",
-    "format:styles": "prettier \"src/**/*.{scss,sass,less,css}\" --parser=css postcss --write",
+    "format:styles": "prettier \"src/**/*.{scss,sass,less,css}\" --parser css --write",
     "precommit": "lint-staged"
   },
   "husky": {

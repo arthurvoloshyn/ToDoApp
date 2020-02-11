@@ -8,8 +8,8 @@
     "git add"
   ],
   "**/*.+(css|scss|sass|less)": [
-    "prettier --parser=css postcss --write",
-    "stylelint --fix --syntax=css --max-warnings=0",
+    "prettier --parser css --write",
+    "stylelint --fix --syntax css --max-warnings=0",
     "git add"
   ]
 }
