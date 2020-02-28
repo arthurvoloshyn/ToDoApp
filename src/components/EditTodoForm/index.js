@@ -16,17 +16,16 @@ const EditTodoForm = ({ id, task, toggleEditForm }) => {
   const dispatch = useContext(Dispatchcontext);
   const [value, handleChange, reset] = useInputState(task);
 
+  const onSubmit = event => {
+    event.preventDefault();
+    dispatch({ type: EDIT, id, task: value });
+    reset();
+    toggleEditForm();
+  };
+
   return (
     <div style={divStyles}>
-      <form
-        onSubmit={event => {
-          event.preventDefault();
-          dispatch({ type: EDIT, id, task: value });
-          reset();
-          toggleEditForm();
-        }}
-        style={formStyles}
-      >
+      <form onSubmit={onSubmit} style={formStyles}>
         <TextField margin="normal" value={value} onChange={handleChange} fullWidth autoFocus />
       </form>
     </div>

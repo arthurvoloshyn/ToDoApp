@@ -1,5 +1,7 @@
 # React webpack
 
+This project was bootstrapped with Webpack
+
 ## Available Scripts
 
 In the project directory, you can run:

@@ -15,15 +15,15 @@ const TodoForm = () => {
   const [value, handleChange, reset] = useInputState('');
   const dispatch = useContext(Dispatchcontext);
 
+  const onSubmit = event => {
+    event.preventDefault();
+    dispatch({ type: ADD, task: value });
+    reset();
+  };
+
   return (
     <Paper style={PaperStyles}>
-      <form
-        onSubmit={event => {
-          event.preventDefault();
-          dispatch({ type: ADD, task: value });
-          reset();
-        }}
-      >
+      <form onSubmit={onSubmit}>
         <TextField value={value} onChange={handleChange} margin="normal" label="Add new Todo" fullWidth />
       </form>
     </Paper>

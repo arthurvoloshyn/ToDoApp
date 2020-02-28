@@ -3,11 +3,12 @@ import { hot } from 'react-hot-loader';
 
 import LoadingPage from './components/LoadingPage/';
 
-const TodoApp = lazy(() => {
-  return new Promise(resolve => {
-    setTimeout(() => resolve(import('./components/TodoApp/')), 3000);
-  });
-});
+const TodoApp = lazy(
+  () =>
+    new Promise(resolve => {
+      setTimeout(() => resolve(import('./components/TodoApp/')), 3000);
+    })
+);
 
 const Loading = <LoadingPage />;
 

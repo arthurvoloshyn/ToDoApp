@@ -13,7 +13,10 @@
     "lint:styles": "stylelint --fix --syntax css src/**/*.css",
     "format": "prettier \"src/**/*.{js,jsx,yml,yaml,ts,tsx,md,graphql,mdx}\" --write",
     "format:styles": "prettier \"src/**/*.{scss,sass,less,css}\" --parser css --write",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "deploy": "now",
+    "prod:now": "now --prod",
+    "dev:now": "now dev"
   },
   "husky": {
     "hooks": {
@@ -108,6 +111,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
+    "now": "^17.0.4",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",

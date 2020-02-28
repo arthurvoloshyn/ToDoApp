@@ -26,16 +26,19 @@ const Todo = ({ task, completed, id }) => {
   const styles = ListItemTextStyles(completed);
   const tabIndex = -1;
 
+  const onToggle = () => dispatch({ type: TOGGLE, id });
+  const onRemove = () => dispatch({ type: REMOVE, id });
+
   return (
     <ListItem style={ListItemStyles}>
       {isEditing ? (
         <EditTodoForm id={id} task={task} toggleEditForm={toggle} />
       ) : (
         <>
-          <Checkbox tabIndex={tabIndex} checked={completed} onClick={() => dispatch({ type: TOGGLE, id })} />
+          <Checkbox tabIndex={tabIndex} checked={completed} onClick={onToggle} />
           <ListItemText style={styles}>{task}</ListItemText>
           <ListItemSecondaryAction>
-            <IconButton aria-label="Delete" onClick={() => dispatch({ type: REMOVE, id })}>
+            <IconButton aria-label="Delete" onClick={onRemove}>
               <DeleteIcon />
             </IconButton>
             <IconButton aria-label="Edit" onClick={toggle}>
