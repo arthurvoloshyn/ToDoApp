@@ -8,12 +8,12 @@ import { EDIT } from '~/constants';
 
 import useInputState from '~/hooks/useInputState';
 
-import { Dispatchcontext } from '~/context/todos.context';
+import { DispatchContext } from '~/context/todos.context';
 
 import { formStyles, divStyles } from './styles';
 
 const EditTodoForm = ({ id, task, toggleEditForm }) => {
-  const dispatch = useContext(Dispatchcontext);
+  const dispatch = useContext(DispatchContext);
   const [value, handleChange, reset] = useInputState(task);
 
   const onSubmit = event => {

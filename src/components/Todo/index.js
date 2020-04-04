@@ -12,7 +12,7 @@ import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 
 import { REMOVE, TOGGLE } from '~/constants';
 
-import { Dispatchcontext } from '~/context/todos.context';
+import { DispatchContext } from '~/context/todos.context';
 
 import useToggle from '~/hooks/useToggle';
 
@@ -22,7 +22,7 @@ import { ListItemStyles, ListItemTextStyles } from './styles';
 
 const Todo = ({ task, completed, id }) => {
   const [isEditing, toggle] = useToggle(false);
-  const dispatch = useContext(Dispatchcontext);
+  const dispatch = useContext(DispatchContext);
   const styles = ListItemTextStyles(completed);
   const tabIndex = -1;
 

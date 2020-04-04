@@ -10,14 +10,14 @@ const defaultTodos = [
 ];
 
 export const TodosContext = createContext();
-export const Dispatchcontext = createContext();
+export const DispatchContext = createContext();
 
 export const TodosProvider = ({ children }) => {
   const [todos, dispatch] = useLocalStorageReducer('todos', defaultTodos, reducer);
 
   return (
     <TodosContext.Provider value={todos}>
-      <Dispatchcontext.Provider value={dispatch}>{children}</Dispatchcontext.Provider>
+      <DispatchContext.Provider value={dispatch}>{children}</DispatchContext.Provider>
     </TodosContext.Provider>
   );
 };

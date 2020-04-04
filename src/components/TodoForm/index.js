@@ -7,13 +7,13 @@ import { ADD } from '~/constants';
 
 import useInputState from '~/hooks/useInputState';
 
-import { Dispatchcontext } from '~/context/todos.context';
+import { DispatchContext } from '~/context/todos.context';
 
 import { PaperStyles } from './styles';
 
 const TodoForm = () => {
   const [value, handleChange, reset] = useInputState('');
-  const dispatch = useContext(Dispatchcontext);
+  const dispatch = useContext(DispatchContext);
 
   const onSubmit = event => {
     event.preventDefault();
