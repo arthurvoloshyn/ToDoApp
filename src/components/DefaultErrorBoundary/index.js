@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import propTypes from 'prop-types';
 
-export default class DefaultErrorBoundary extends Component {
+class DefaultErrorBoundary extends Component {
   state = {
     isError: false
   };
@@ -21,3 +21,5 @@ export default class DefaultErrorBoundary extends Component {
     return isError ? <div>Something went wrong!</div> : children;
   }
 }
+
+export default DefaultErrorBoundary;

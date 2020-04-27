@@ -22,7 +22,7 @@ const TodoApp = ({ elevation }) => (
         <Typography color="inherit"> REACT TODO APP </Typography>
       </Toolbar>
     </AppBar>
-    <Grid container justify={'center'} style={GridStyles}>
+    <Grid container justify="center" style={GridStyles}>
       <Grid item xs={11} md={8} lg={4}>
         <TodosProvider>
           <TodoForm />
