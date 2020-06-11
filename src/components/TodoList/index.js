@@ -12,7 +12,9 @@ const TodoList = () => {
   const todos = useContext(TodosContext);
   const todosLength = todos.length - 1;
 
-  return todos.length ? (
+  if (!todos.length) return null;
+
+  return (
     <Paper>
       <List>
         {todos.map((todo, i) => (
@@ -23,7 +25,7 @@ const TodoList = () => {
         ))}
       </List>
     </Paper>
-  ) : null;
+  );
 };
 
 export default TodoList;
