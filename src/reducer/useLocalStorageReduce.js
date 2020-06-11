@@ -5,7 +5,7 @@ const useLocalStorageReducer = (key, defaultVal, reducer) => {
     let val;
 
     try {
-      val = JSON.parse(window.localStorage.getItem(key) || String(defaultVal));
+      val = JSON.parse(window.localStorage.getItem(key) || `${defaultVal}`);
     } catch {
       val = defaultVal;
     }
