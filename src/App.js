@@ -6,7 +6,7 @@ import LoadingPage from './components/LoadingPage/';
 const TodoApp = lazy(
   () =>
     new Promise(resolve => {
-      setTimeout(() => resolve(import('./components/TodoApp/')), 3000);
+      setTimeout(() => resolve(import('./components/TodoApp')), 3000);
     })
 );
 
