@@ -9,7 +9,7 @@ import Grid from '@material-ui/core/Grid';
 
 import { TodosProvider } from '~/context/todos.context';
 
-import TodoList from '~/containers/TodoList';
+import TodoList from '../TodoList';
 
 import TodoForm from '../TodoForm';
 
