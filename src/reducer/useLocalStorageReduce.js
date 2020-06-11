@@ -1,13 +1,13 @@
 import { useReducer, useEffect } from 'react';
 
-const useLocalStorageReducer = (key, defaulVal, reducer) => {
-  const [state, dispatch] = useReducer(reducer, defaulVal, () => {
+const useLocalStorageReducer = (key, defaultVal, reducer) => {
+  const [state, dispatch] = useReducer(reducer, defaultVal, () => {
     let val;
 
     try {
-      val = JSON.parse(window.localStorage.getItem(key) || String(defaulVal));
+      val = JSON.parse(window.localStorage.getItem(key) || String(defaultVal));
     } catch {
-      val = defaulVal;
+      val = defaultVal;
     }
 
     return val;
