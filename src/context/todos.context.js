@@ -2,7 +2,7 @@ import React, { createContext } from 'react';
 import propTypes from 'prop-types';
 
 import reducer from '~/reducer/todo.reducer';
-import useLocalStorageReducer from '~/reducer/useLocalStorageReducer';
+import useLocalStorageReducer from '~/hooks/useLocalStorageReducer';
 
 const defaultTodos = [
   { id: 1, task: 'Mow the lawn using goats', completed: false },
